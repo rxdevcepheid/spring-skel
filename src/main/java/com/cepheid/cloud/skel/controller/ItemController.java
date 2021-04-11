@@ -78,7 +78,7 @@ public class ItemController {
     @DeleteMapping("/api/1.0/items/{id}")
     @Produces(MediaType.APPLICATION_JSON)
     @Transactional(propagation = Propagation.REQUIRED)
-    public void deleteItem(@PathVariable Long id) throws CreateException {
+    public void deleteItem(@PathVariable Long id) {
         mItemRepository.deleteById(id);
     }
 }
