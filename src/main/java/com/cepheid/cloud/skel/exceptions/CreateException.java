@@ -1,10 +1,8 @@
 package com.cepheid.cloud.skel.exceptions;
 
-public class CreateException extends Exception {
+public class CreateException extends BadRequestException {
 
-    public CreateException() {}
-
-    public CreateException(String description) {
-        super(description);
+    public CreateException(String entityName) {
+        super(entityName, "POST", "idexist");
     }
 }
