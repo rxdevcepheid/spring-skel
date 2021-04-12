@@ -1,5 +1,8 @@
 package com.cepheid.cloud.skel.exceptions;
 
+/**
+ * parent class for all Request related exception
+ */
 public abstract class BadRequestException extends Exception {
 
 

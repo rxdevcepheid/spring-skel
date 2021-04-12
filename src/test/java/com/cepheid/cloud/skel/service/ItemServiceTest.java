@@ -43,6 +43,10 @@ public class ItemServiceTest {
         item = populteDefaultItem();
     }
 
+    /**
+     * Populates default Item
+     * @return
+     */
     private Item populteDefaultItem() {
         item = new Item();
         item.setName(DEFAULT_TEST_NAME);
@@ -52,12 +56,19 @@ public class ItemServiceTest {
         return item;
     }
 
+    /**
+     * Populates default Description
+     * @return
+     */
     private Set<Description> defaultDescription() {
         Set<Description> descriptionSet = new HashSet<>();
         descriptionSet.add(new Description(DEFAULT_TEST_DESCRIPTION));
         return descriptionSet;
     }
 
+    /**
+     * Test Get item based on id
+     */
     @Test
     public void testGetItem() {
         Long id = 2l;
@@ -66,6 +77,9 @@ public class ItemServiceTest {
         assertEquals(id, result.getId());
     }
 
+    /**
+     * Test get all items with pagination
+     */
     @Test
     public void testGetAllItems() {
         List<Item> result = itemService.getAllItem(new PageRequest(0, 10));
@@ -73,6 +87,9 @@ public class ItemServiceTest {
         assertTrue(result.size() > 0);
     }
 
+    /**
+     * Test for Create new Items
+     */
     @Test
     public void testCreateItem() {
         item.setId(null);
@@ -82,6 +99,9 @@ public class ItemServiceTest {
         assertEquals(result.getName(), DEFAULT_TEST_NAME);
     }
 
+    /**
+     * Test for update existing item
+     */
     @Test
     public void testUpdateItem() {
         item.setId(null);
